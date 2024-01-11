@@ -1,172 +1,200 @@
 [jStat](http://www.jstat.org/) - JavaScript Statistical Library
 ===============================================================
 
-[![npm version](https://badge.fury.io/js/jstat.svg)](https://badge.fury.io/js/jstat)
+Forked from [jStat](https://github.com/brigalabs/jstat/tree/typescript-types)
 
-jStat provides native javascript implementations of statistical functions.
-Full details are available in the [docs](https://jstat.github.io/all.html).
-jStat provides more functions than most libraries, including the weibull,
-cauchy, poisson, hypergeometric, and beta distributions.  For most
-distributions, jStat provides the pdf, cdf, inverse, mean, mode, variance, and
-a sample function, allowing for more complex calculations.
+I needed this for a typescript statistic calculator project (Damn you Ahmed) and for it to deploy on Vercel
 
-**NOTICE:** The previous case sensitive `jStat` module will no longer be
-updated. Instead use the all lowercase `jstat` when doing an `npm install` or
-similar.
+I don't need everything but since I already started, might as well try making the rest of it
 
-Using jStat in a Browser
-------------------------
+**NOT TESTED FULLY**: I cannot say if everything will function but deploying a typescript project should work on Vercel.
 
-jStat can be used in the browser. The `jStat` object will be added to the
-window. For example:
-
+To install
 ```
-<script src="components/jstat.js"></script> <!-- include jStat, from the CDN or otherwise -->
-
-<script>
-...
-var jstat = this.jStat(dataset); // jStat will be added to the window
-...
-data[i]['cum'] = jstat.normal(jstat.mean(), jstat.stdev()).cdf(data[i].x);
-...
-</script>
-
+npm remove jstat
+npm install https://github.com/brigalabs/jstat.git#typescript-types
 ```
 
-CDN [![jsDelivr Hits](https://data.jsdelivr.com/v1/package/npm/jstat/badge?style=rounded)](https://www.jsdelivr.com/package/npm/jstat)
----
-
-The library is hosted on [jsDelivr](http://www.jsdelivr.com/) using the following
-url:
-```
-//cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js
-```
-Note that `'latest'` can be replaced with any released verion of jStat.
-
-Module Loaders
---------------
-
-Currently jStat is exposed as `j$` and `jStat` inside an object, rather than
-exported directly. This may confuse some module loaders, however should be
-easily remedied with the correct configuration.
-
-NodeJS & NPM
-------------
-To install via npm:
-
-```
-npm install --save jstat
-```
-
-When loading under Node be sure to reference the child object.
-
-```
-var { jStat } = require('jstat').
-```
-
-RequireJS Shim
---------------
-
-For RequireJS not only `exports` but also `init` function must be specified.
-```
-requirejs.config({
-  paths: {
-    'jstat': 'path/to/jstat/dist/jstat.min'
-  },
-  shim: {
-    jstat: {
-      exports: ['j$', 'jStat'],
-      init: function () {
-        return {
-          j$: j$,
-          jStat: jStat
-        };
-      }
-    }
-  }
-});
-```
-
-Build Prerequisites
--------------------
-
-In order to build jStat, you need to have GNU make 3.8 or later, Node.js 0.2 or
-later, and git 1.7 or later.  (Earlier versions might work OK, but are not
-tested.)
-
-Windows users have two options:
-
-1. Install [msysgit](https://code.google.com/p/msysgit/) (Full installer for official Git),
-   [GNU make for Windows](http://gnuwin32.sourceforge.net/packages/make.htm), and a
-   [binary version of Node.js](http://node-js.prcn.co.cc/). Make sure all three packages are installed to the same
-   location (by default, this is C:\Program Files\Git).
-2. Install [Cygwin](http://cygwin.com/) (make sure you install the git, make, and which packages), then either follow
-   the [Node.js build instructions](https://github.com/ry/node/wiki/Building-node.js-on-Cygwin-%28Windows%29) or install
-   the [binary version of Node.js](http://node-js.prcn.co.cc/).
-
-Mac OS users should install Xcode (comes on your Mac OS install DVD, or downloadable from
-[Apple's Xcode site](http://developer.apple.com/technologies/xcode.html)) and
-[http://mxcl.github.com/homebrew/](Homebrew). Once Homebrew is installed, run `brew install git` to install git,
-and `brew install node` to install Node.js.
-
-Linux/BSD users should use their appropriate package managers to install make, git, and node, or build from source
-if you swing that way.
-
-
-Building jStat
---------------
-
-First, clone a copy of the jStat git repo by running `git clone git://github.com/jstat/jstat.git`.
-
-To download all necessary libraries run `npm install`.
-
-Then, to get a complete, minified version of jStat and all documentation,
-simply `cd` to the `jstat` directory and type `make`. If you don't have Node
-installed and/or want to make a basic, uncompressed, unlinted version of jstat,
-use `make jstat` instead of `make`.
-
-The built version of jStat will be put in the `dist/` subdirectory.
-
-Generate just the documentation by running `make doc`. Documentation will be
-placed in `dist/docs` by default.
-
-To remove all built files, run `make clean`.
-
-
-Running Tests
--------------
-
-Execute all tests by running `make test`.
-
-Or if you wish to run a specific test, `cd` to `test/<subdir>` and run `node <some_test>-test.js`.
-
-
-Get the Code
-------------
-
-Both the minified and unminified source are located in the `dist/` directory.
-For those who don't want to build it themselves.
-
-
-Contribute
-----------
-
-jStat is now going to follow most of the v8
-[JavaScript](https://google.github.io/styleguide/jsguide.html)
-guidelines. There will be plenty of source that uses the old style, but we're
-going to work away from that.
-
-Also, we'll be going through and reimplementing a good portion of the code to
-run faster. Hopefully it won't take too long to get the project on one basic
-standard.
-
-When submitting pull requests, no need to check in `dist/*.js`. They'll be
-recompiled for distribution anyway.
-
-Join the Community
-------------------
-
-We always like discussion of how to improve jStat.
-Join us at our [mailing list](http://groups.google.com/group/jstat-discuss/)
-and let us know what you'd like to see.  Also come ask questions in the #jstat
-channel on irc.freenode.net.
+TODO LIST
+---------
+Core Functionality
+ * [X] ~~*jStat()*~~ [2024-01-11]
+ * [X] ~~*rows()*~~ [2024-01-11]
+ * [X] ~~*rowa()*~~ [2024-01-11]
+ * [X] ~~*cols()*~~ [2024-01-11]
+ * [X] ~~*cola()*~~ [2024-01-11]
+ * [X] ~~*slice()*~~ [2024-01-11]
+ * [X] ~~*sliceAssign()*~~ [2024-01-11]
+ * [X] ~~*dimensions()*~~ [2024-01-11]
+ * [X] ~~*row()*~~ [2024-01-11]
+ * [X] ~~*col()*~~ [2024-01-11]
+ * [X] ~~*diag()*~~ [2024-01-11]
+ * [X] ~~*antidiag()*~~ [2024-01-11]
+ * [X] ~~*diagonal()*~~ [2024-01-11]
+ * [X] ~~*transpose()*~~ [2024-01-11]
+ * [X] ~~*map( func )*~~ [2024-01-11]
+ * [X] ~~*cumreduce( func )*~~ [2024-01-11]
+ * [X] ~~*alter( func )*~~ [2024-01-11]
+ * [X] ~~*create()*~~ [2024-01-11]
+ * [X] ~~*zeros()*~~ [2024-01-11]
+ * [X] ~~*ones()*~~ [2024-01-11]
+ * [X] ~~*rand()*~~ [2024-01-11]
+ * [X] ~~*copy()*~~ [2024-01-11]
+ * [X] ~~*identity()*~~ [2024-01-11]
+ * [X] ~~*seq()*~~ [2024-01-11]
+ * [X] ~~*arange()*~~ [2024-01-11]
+ * [X] ~~*clear()*~~ [2024-01-11]
+ * [X] ~~*symmetric()*~~ [2024-01-11]
+jStat Utility Methods
+ * [ ] utils.calcRdx( num0, num1 )
+ * [ ] utils.isArray( arg )
+ * [ ] utils.isFunction( arg )
+ * [ ] utils.isNumber( arg )
+Vector Functionality
+ * [X] ~~*sum()*~~ [2024-01-11]
+ * [X] ~~*sumsqrd()*~~ [2024-01-11]
+ * [X] ~~*sumsqerr()*~~ [2024-01-11]
+ * [X] ~~*sumrow()*~~ [2024-01-11]
+ * [X] ~~*product()*~~ [2024-01-11]
+ * [X] ~~*min()*~~ [2024-01-11]
+ * [X] ~~*max()*~~ [2024-01-11]
+ * [ ] mean()
+ * [ ] meansqerr()
+ * [ ] geomean()
+ * [X] ~~*median()*~~ [2024-01-11]
+ * [ ] cumsum()
+ * [ ] cumprod()
+ * [ ] diff()
+ * [ ] rank()
+ * [ ] mode()
+ * [ ] range()
+ * [X] ~~*variance()*~~ [2024-01-11]
+ * [ ] pooledvariance()
+ * [ ] deviation()
+ * [ ] stdev()
+ * [ ] pooledstdev()
+ * [ ] meandev()
+ * [ ] meddev()
+ * [ ] skewness()
+ * [ ] kurtosis()
+ * [ ] coeffvar()
+ * [X] ~~*quartiles()*~~ [2024-01-11]
+ * [X] ~~*quantiles()*~~ [2024-01-11]
+ * [ ] percentile()
+ * [ ] percentileOfScore()
+ * [ ] histogram()
+ * [ ] covariance()
+ * [ ] corrcoeff()
+ * [ ] spearmancoeff()
+Distributions
+ * [X] ~~*jStat.beta*~~ [2024-01-11]
+ * [X] ~~*jStat.centralF*~~ [2024-01-11]
+ * [ ] jStat.cauchy
+ * [ ] jStat.chisquare
+ * [ ] jStat.exponential
+ * [ ] jStat.gamma
+ * [ ] jStat.invgamma
+ * [ ] jStat.kumaraswamy
+ * [X] ~~*jStat.lognormal*~~ [2024-01-11]
+ * [X] ~~*jStat.normal*~~ [2024-01-11]
+ * [ ] jStat.pareto
+ * [X] ~~*jStat.studentt*~~ [2024-01-11]
+ * [ ] jStat.tukey
+ * [ ] jStat.weibull
+ * [ ] jStat.uniform
+ * [ ] jStat.binomial
+ * [ ] jStat.negbin
+ * [ ] jStat.hypgeom
+ * [ ] jStat.poisson
+ * [ ] jStat.triangular
+ * [ ] jStat.arcsine
+Linear Algebra
+Instance Functionality
+ * [X] ~~*add( arg )*~~ [2024-01-11]
+ * [X] ~~*subtract( arg )*~~ [2024-01-11]
+ * [X] ~~*divide( arg )*~~ [2024-01-11]
+ * [X] ~~*multiply( arg )*~~ [2024-01-11]
+ * [X] ~~*dot( arg )*~~ [2024-01-11]
+ * [X] ~~*pow( arg )*~~ [2024-01-11]
+ * [X] ~~*exp()*~~ [2024-01-11]
+ * [X] ~~*log()*~~ [2024-01-11]
+ * [X] ~~*abs()*~~ [2024-01-11]
+ * [X] ~~*norm()*~~ [2024-01-11]
+ * [X] ~~*angle( arg )*~~ [2024-01-11]
+Static Functionality
+ * [X] ~~*add( arr, arg )*~~ [2024-01-11]
+ * [X] ~~*subtract( arr, arg )*~~ [2024-01-11]
+ * [X] ~~*divide( arr, arg )*~~ [2024-01-11]
+ * [X] ~~*multiply( arr, arg )*~~ [2024-01-11]
+ * [X] ~~*dot( arr1, arr2 )*~~ [2024-01-11]
+ * [ ] outer( A, B )
+ * [X] ~~*pow( arr, arg )*~~ [2024-01-11]
+ * [X] ~~*exp( arr )*~~ [2024-01-11]
+ * [X] ~~*log( arr )*~~ [2024-01-11]
+ * [X] ~~*abs( arr )*~~ [2024-01-11]
+ * [X] ~~*norm( arr )*~~ [2024-01-11]
+ * [X] ~~*angle( arr1, arr2 )*~~ [2024-01-11]
+ * [ ] aug( A, B )
+ * [ ] det( A )
+ * [ ] inv( A )
+ * [ ] gauss_elimination( A, B )
+ * [ ] gauss_jordan( A, B )
+ * [ ] lu( A )
+ * [ ] cholesky( A )
+ * [ ] gauss_jacobi( A, b, x, r )
+ * [ ] gauss_seidel( A, b, x, r )
+ * [ ] SOR( A, b, x, r, w )
+ * [ ] householder( A )
+ * [ ] QR( A )
+ * [ ] lstsq( A, b )
+ * [ ] jacobi()
+ * [ ] rungekutta()
+ * [ ] romberg()
+ * [ ] richardson()
+ * [ ] simpson()
+ * [ ] hermite()
+ * [ ] lagrange()
+ * [ ] cubic_spline()
+ * [ ] gauss_quadrature()
+ * [ ] PCA()
+Statistical Test
+Statistics Instance Functionality
+ * [X] ~~*zscore( value[, flag] )*~~ [2024-01-11]
+ * [X] ~~*ztest( value, sides[, flag] )*~~ [2024-01-11]
+ * [ ] tscore( value )
+ * [ ] ttest( value, sides )
+ * [ ] anovafscore()
+ * [ ] anovaftest()
+Z Statistics
+ * [X] ~~*jStat.zscore( value, mean, sd )*~~ [2024-01-11]
+ * [X] ~~*jStat.zscore( value, array[, flag] )*~~ [2024-01-11] 
+ * [X] ~~*jStat.ztest( value, mean, sd, sides )*~~ [2024-01-11]
+ * [X] ~~*jStat.ztest( zscore, sides )*~~ [2024-01-11]
+ * [X] ~~*jStat.ztest( value, array, sides[, flag] )*~~ [2024-01-11]
+T Statistics
+ * [X] ~~*jStat.tscore( value, mean, sd, n )*~~ [2024-01-11]
+ * [X] ~~*jStat.tscore( value, array )*~~ [2024-01-11]
+ * [X] ~~*jStat.ttest( value, mean, sd, n, sides )*~~ [2024-01-11]
+ * [X] ~~*jStat.ttest( tscore, n, sides )*~~ [2024-01-11]
+ * [X] ~~*jStat.ttest( value, array, sides )*~~ [2024-01-11]
+F Statistics
+ * [ ] jStat.anovafscore( array1, array2, ..., arrayn )
+ * [ ] jStat.anovafscore( [array1,array2, ...,arrayn] )
+ * [ ] jStat.anovaftest( array1, array2, ...., arrayn )
+ * [ ] jStat.ftest( fscore, df1, df2)
+Tukey's Range Test
+ * [ ] jStat.qscore( mean1, mean2, n1, n2, sd )
+ * [ ] jStat.qscore( array1, array2, sd )
+ * [ ] jStat.qtest( qscore, n, k )
+ * [ ] jStat.qtest( mean1, mean2, n1, n2, sd, n, k )
+ * [ ] jStat.qtest( array1, array2, sd, n, k )
+ * [X] ~~*jStat.tukeyhsd( arrays )*~~ [2024-01-11]
+Confidence Intervals
+ * [ ] jStat.normalci( value, alpha, sd, n )
+ * [ ] jStat.normalci( value, alpha, array )
+ * [ ] jStat.tci( value, alpha, sd, n )
+ * [ ] jStat.tci( value, alpha, array )
+ * [ ] jStat.fn.oneSidedDifferenceOfProportions( p1, n1, p2, n2 )
+ * [ ] jStat.fn.twoSidedDifferenceOfProportions( p1, n1, p2, n2 )
+Regression Model
+ * [ ] ols( endog, exog )

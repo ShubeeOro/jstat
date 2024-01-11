@@ -109,5 +109,71 @@ declare module "jstat" {
      * @param sides either 1 or 2 (2 for two sided z-test)
      */
     export function ztest(zscore: number, sides?: 1 | 2): number;
+
+
+    /**
+     * 
+     * 
+     * 
+     * @param value
+     * @param mean
+     * @param sd
+     * @param n
+     */
+    export function tscore(
+      value: number,
+      mean: number,
+      sd: number,
+      n: number,
+    ): number;
+
+    /**
+     * 
+     * @param value
+     * @param array
+     */
+    export function tscore(value: number, array: number[]): number;
+
+
+    /**
+     * 
+     * @param value 
+     * @param mean 
+     * @param sd 
+     * @param n 
+     * @param sides
+     */
+
+    export function ttest(
+      value: number,
+      mean: number,
+      sd: number,
+      n: number,
+      sides?: 1 | 2
+    ): number;
+
+    /**
+     * 
+     * 
+     * @param tscore
+     * @param n
+     * @param sides
+     */
+
+
+    export function ttest(
+      tscore: number,
+      n: number,
+      sides?: 1 | 2
+    ): number;
+
+    /**
+     * 
+     * @param value 
+     * @param array 
+     * @param sides 
+     */
+
+    export function ttest(value: number, array: number[], sides?: 1 | 2): number;
   }
 }
