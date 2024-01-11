@@ -1,7 +1,7 @@
 [jStat](http://www.jstat.org/) - JavaScript Statistical Library
 ===============================================================
 
-Forked from [jStat](https://github.com/brigalabs/jstat/tree/typescript-types)
+Forked from [jStat](https://github.com/brigalabs/jstat/tree/typescript-types) by brigalabs
 
 I needed this for a typescript statistic calculator project (Damn you Ahmed) and for it to deploy on Vercel
 
@@ -9,10 +9,10 @@ I don't need everything but since I already started, might as well try making th
 
 **NOT TESTED FULLY**: I cannot say if everything will function but deploying a typescript project should work on Vercel.
 
-To install
+To install (WIP)
 ```
 npm remove jstat
-npm install https://github.com/brigalabs/jstat.git#typescript-types
+
 ```
 
 TODO LIST
