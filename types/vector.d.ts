@@ -126,5 +126,60 @@ declare module "jstat" {
      *
      */
     export function median(vector: number[]): number;
+
+    /**
+     * 
+     * @param vector 
+     * 
+     */
+
+    export function mean(vector: number[]): number;
+
+    /**
+     * 
+     * @param vector 
+     * 
+     */
+
+    export function meansqerr(vector: number[]): number;
+
+
+    /**
+     * 
+     * @param vector 
+     * 
+     */
+    export function geomean(vector: number[]): number;
+
+    /**
+     * 
+     * @param vector 
+     */
+    export function cumsum(vector: number[]): number;
+    /**
+     * 
+     * @param vector 
+     */
+    export function cumprod(vector: number[]): number;
+    /**
+     * 
+     * @param vector 
+     */
+    export function diff(vector: number[]): number;
+    /**
+     * 
+     * @param vector 
+     */
+    export function rank(vector: number[]): number;
+    /**
+     * 
+     * @param vector 
+     */
+    export function mode(vector: number[]): number;
+    /**
+     * 
+     * @param vector 
+     */
+    export function range(vector: number[]): number;
   }
 }

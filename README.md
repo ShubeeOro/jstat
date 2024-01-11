@@ -58,16 +58,16 @@ Vector Functionality
  * [X] ~~*product()*~~ [2024-01-11]
  * [X] ~~*min()*~~ [2024-01-11]
  * [X] ~~*max()*~~ [2024-01-11]
- * [ ] mean()
- * [ ] meansqerr()
- * [ ] geomean()
+ * [X] ~~*mean()*~~ [2024-01-11]
+ * [X] ~~*meansqerr()*~~ [2024-01-11]
+ * [X] ~~*geomean()*~~ [2024-01-11]
  * [X] ~~*median()*~~ [2024-01-11]
- * [ ] cumsum()
- * [ ] cumprod()
- * [ ] diff()
- * [ ] rank()
- * [ ] mode()
- * [ ] range()
+ * [X] ~~*cumsum()*~~ [2024-01-11]
+ * [X] ~~*cumprod()*~~ [2024-01-11]
+ * [X] ~~*diff()*~~ [2024-01-11]
+ * [X] ~~*rank()*~~ [2024-01-11]
+ * [X] ~~*mode()*~~ [2024-01-11]
+ * [X] ~~*range()*~~ [2024-01-11]
  * [X] ~~*variance()*~~ [2024-01-11]
  * [ ] pooledvariance()
  * [ ] deviation()
